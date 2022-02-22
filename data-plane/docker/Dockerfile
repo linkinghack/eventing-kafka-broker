@@ -44,7 +44,7 @@ RUN ./mvnw package -pl=${APP_DIR} -Drelease -am -DskipTests -Deditorconfig.skip 
 
 # RUN ./generate_jdk.sh /build/${APP_DIR}/target/${APP_JAR}
 
-RUN cp /build/${APP_DIR}/target/${APP_JAR} /app/app.jar
+RUN mkdir /app && cp /build/${APP_DIR}/target/${APP_JAR} /app/app.jar
 
 FROM ${BASE_IMAGE} as running
 
