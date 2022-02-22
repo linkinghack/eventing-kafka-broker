@@ -19,4 +19,4 @@ jobs:
           DOCKERHUB_USER: ${{ secrets.DOCKERHUB_USER }}
           DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
         name: build dataplane
-        run: bash hack/buld-multi-arch-images.sh
+        run: bash hack/build-multi-arch-images.sh
