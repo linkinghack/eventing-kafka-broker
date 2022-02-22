@@ -42,7 +42,7 @@ COPY . .
 
 RUN ./mvnw package -pl=${APP_DIR} -Drelease -am -DskipTests -Deditorconfig.skip --no-transfer-progress
 
-RUN ./generate_jdk.sh /build/${APP_DIR}/target/${APP_JAR}
+# RUN ./generate_jdk.sh /build/${APP_DIR}/target/${APP_JAR}
 
 RUN cp /build/${APP_DIR}/target/${APP_JAR} /app/app.jar
 
@@ -51,4 +51,4 @@ FROM ${BASE_IMAGE} as running
 COPY --from=builder /app /app
 
 # Configure PATH
-ENV PATH="/app/jdk/bin:${PATH}"
+# ENV PATH="/app/jdk/bin:${PATH}"
