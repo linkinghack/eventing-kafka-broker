@@ -1,2 +1,2 @@
 # Use :nonroot base image for all containers
-defaultBaseImage: linkinghack/distroless-static:nonroot
+defaultBaseImage: gcr.io/distroless/static:nonroot
