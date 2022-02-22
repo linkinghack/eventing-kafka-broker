@@ -15,5 +15,5 @@ docker buildx build --platform linux/amd64,linux/arm64 \
   --build-arg BASE_IMAGE=gcr.io/distroless/java-debian11:base-nonroot \
   --build-arg APP_JAR=dispatcher-1.0-SNAPSHOT.jar \
   --build-arg APP_DIR=dispatcher \
-  -t "linkinghack/knative-eventing-kafka-broker-receiver:1.2" \
+  -t "linkinghack/knative-eventing-kafka-broker-dispatcher:1.2" \
   ./data-plane --push
