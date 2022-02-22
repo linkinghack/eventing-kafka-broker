@@ -2,7 +2,7 @@ docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASSWORD;
 
 docker buildx build --platform linux/amd64,linux/arm64 \
   -f ./data-plane/docker/Dockerfile \
-  --build-arg JAVA_IMAGE=docker.io/eclipse-temurin:17-jdk-centos7 \
+  --build-arg JAVA_IMAGE=openjdk:17.0.2-jdk \
   --build-arg BASE_IMAGE=gcr.io/distroless/java-debian11:base-nonroot \
   --build-arg APP_JAR=receiver-1.0-SNAPSHOT.jar \
   --build-arg APP_DIR=receiver \
@@ -11,7 +11,7 @@ docker buildx build --platform linux/amd64,linux/arm64 \
 
 docker buildx build --platform linux/amd64,linux/arm64 \
   -f ./data-plane/docker/Dockerfile \
-  --build-arg JAVA_IMAGE=docker.io/eclipse-temurin:17-jdk-centos7 \
+  --build-arg JAVA_IMAGE=openjdk:17.0.2-jdk \
   --build-arg BASE_IMAGE=gcr.io/distroless/java-debian11:base-nonroot \
   --build-arg APP_JAR=dispatcher-1.0-SNAPSHOT.jar \
   --build-arg APP_DIR=dispatcher \
